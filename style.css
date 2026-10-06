@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #222222;
+    color: #222222;
+    padding: 30px;
+}
+
+
+
+
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 7px 10px;
+
+    border: 1px solid #777;
+    border-radius: 30px;
+}
+
+.logo {
+    color: white;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar nav a,
+.contact {
+    border: 1px solid #777;
+    padding: 6px 25px;
+    border-radius: 20px;
+
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    background: #f5f4ee;
+    color: #222;
+}
+
+
+
+
+.museum-container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+
+    /* Left side slightly smaller like Figma */
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 8px;
+}
+
+
+
+
+.main-card,
+.top-card,
+.portrait-card,
+.info-card {
+    border-radius: 15px;
+    padding: 12px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.main-card:hover,
+.top-card:hover,
+.portrait-card:hover,
+.info-card:hover {
+    transform: translateY(-3px);
+}
+
+
+
+
+.main-card {
+    background: #f5f4ee;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 520px;
+}
+
+.card-content {
+    width: 100%;
+}
+
+.small-text {
+    font-size: 9px;
+    color: #777;
+
+    margin-bottom: 5px;
+
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 17px;
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+.main-image {
+    width: 100%;
+}
+
+.main-image img {
+    width: 100%;
+    height: 350px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+}
+
+
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+
+.top-card {
+    background: #eeecd9;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 185px;
+}
+
+.top-text {
+    flex: 1;
+
+    padding-top: 2px;
+}
+
+.top-card h2 {
+    font-size: 16px;
+    font-weight: 500;
+
+    margin-bottom: 7px;
+}
+
+.top-card p {
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.top-card img {
+    width: 42%;
+    height: 125px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+}
+
+
+
+
+.bottom-cards {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    flex: 1;
+}
+
+
+
+
+.portrait-card {
+    background: #dca98e;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.portrait-card img {
+    width: 100%;
+    height: 105px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+}
+
+.portrait-content {
+    margin-top: 8px;
+}
+
+.portrait-card h2,
+.info-card h2 {
+    font-size: 16px;
+    font-weight: 500;
+
+    margin-bottom: 6px;
+}
+
+.portrait-card p,
+.info-card p {
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+
+
+
+.info-card {
+    background: #eeecd9;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.info-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 8px;
+}
+
+
+
+
+.info-circle {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+    min-height: 42px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+}
+
+
+
+.card-bottom {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.card-bottom:hover {
+    transform: translateX(4px);
+}
+
+
+
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .museum-container {
+        grid-template-columns: 1fr;
+    }
+
+    .main-card {
+        min-height: auto;
+    }
+
+    .main-image img {
+        height: 350px;
+    }
+
+    .navbar nav a,
+    .contact {
+        padding: 6px 15px;
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 12px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .navbar nav a,
+    .contact {
+        padding: 7px 12px;
+
+        font-size: 11px;
+    }
+
+    .museum-container {
+        grid-template-columns: 1fr;
+    }
+
+    .main-image img {
+        height: 250px;
+    }
+
+    .top-card {
+        flex-direction: column;
+    }
+
+    .top-card img {
+        width: 100%;
+        height: 180px;
+    }
+
+    .bottom-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .portrait-card img {
+        height: 180px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .info-circle {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+        min-height: 42px;
+    }
+}
